@@ -1,8 +1,8 @@
 {
-  "name": "@smarter/ui-chat",
+  "name": "@smarter/workbench",
   "version": "0.0.1",
-  "description": "chatbot React.js component for the https://smarter.sh no-code, plugin based AI platform",
-  "homepage": "https://smarter.sh",
+  "description": "React.js chat console for the https://platform.smarter.sh developer workbench.",
+  "homepage": "https://platform.smarter.sh",
   "main": "dist/index.js",
   "files": [
     "dist",
@@ -20,10 +20,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/smarter-sh/smarter-chat"
+    "url": "https://github.com/smarter-sh/smarter-workbench"
   },
   "bugs": {
-    "url": "https://github.com/smarter-sh/smarter-chat/issues"
+    "url": "https://github.com/smarter-sh/smarter-workbench/issues"
   },
   "contributors": [
     "Lawrence McDaniel <lpm0073@gmail.com> (https://lawrencemcdaniel.com/)"
@@ -45,17 +45,11 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@chatscope/chat-ui-kit-react": "^2.0.3",
+    "@smarter/smarter-chat": "^0.1.0",
     "dotenv": "^16.4.7",
     "i": "^0.3.7",
     "npm": "^11.0.0",
     "path": "^0.12.7",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-helmet": "^6.1.0",
-    "react-icons": "^5.4.0",
-    "react-modal": "^3.16.3",
-    "styled-components": "^6.1.15",
     "vite-plugin-comlink": "^5.1.0",
     "vite-plugin-html": "^3.2.2"
   },
@@ -84,6 +78,12 @@
     "vite": "^6.0.11"
   },
   "peerDependencies": {
-    "@chatscope/chat-ui-kit-react": "^2.0.3"
+    "@chatscope/chat-ui-kit-react": "^2.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
+    "react-icons": "^5.4.0",
+    "react-modal": "^3.16.3",
+    "styled-components": "^6.1.15"
   }
 }

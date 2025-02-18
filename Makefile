@@ -90,6 +90,10 @@ update:
 python-check:
 	@command -v $(PYTHON) >/dev/null 2>&1 || { echo >&2 "This project requires $(PYTHON) but it's not installed.  Aborting."; exit 1; }
 
+python-clean:
+	rm -rf .pypi_cache
+	rm -rf venv
+
 python-init:
 	mkdir -p .pypi_cache && \
 	make python-check

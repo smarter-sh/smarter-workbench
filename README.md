@@ -4,44 +4,23 @@
 <img src="https://img.shields.io/badge/Smarter.sh-orange?style=flat&logo=appveyor&logoColor=white" height="32">
 </a>
 
-# SmarterChat React.js component
+# Smarter Workbench
 
-This project contains the source code for the interactive chatbot found in the Smarter web console [developer workbench](https://platform.smarter.sh/chatbots/example/). It integrates natively with Smarter Saas and on-premise installations. You can optionally enable the meta data output behavior found in the Smarter sandbox. See [Smarter Technical Overview](./doc/README.md)
-
-This project is also suitable for all front-end cross-platform projects. For example, use this code base to create a react.js run-time for use inside of Wordpress plugins, salesforce.com apps, .net components and Sharepoint add-ins.
+A react.js app built from SmarterChat, an npm component. This project contains the source code for the interactive chatbot found in the Smarter web console [developer workbench](https://platform.smarter.sh/chatbots/example/). This is a working example of how to integrate SmarterChat into
+existing web pages; in this case, a Django project. See [Smarter Technical Overview](./doc/README.md)
 
 ![Basic Usage](./doc/img/readme-usage4.png)
 
-## Use case #1 - build a react app
+## Usage: integrate to an existing Django web application
 
-```console
-npm install @smarter/ui-chat
-```
-
-```jsx
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { SmarterChat } from "@smarter/ui-chat";
-
-const rootElement = document.getElementById("root");
-const root = ReactDOM.createRoot(rootElement);
-root.render(<SmarterChat apiUrl={"https://smarter.3141-5926-5359.api.smarter.sh/"} toggleMetadata={false} />);
-```
-
-## Use case #2 - integrate to an existing web application
-
-**To do: Move this to a cookiecutter scaffolding 'Quickstart' template.**
-
-Fork, configure, build and release a reactapp component that you serve from an http host, and integrate into an existing web page.
-This is the use case for the Smarter developer workbench, passing an authenticated chatbot api url that works
-with any chatbot associated with your Smarter account, regardless of whether it has been deployed.
+Pass an authenticated chatbot api url that works with any chatbot associated with your Smarter account, regardless of whether it has been deployed.
 
 Implementation example:
 
 ```js
 // THIS REPO:
 // 1. set this value in './src/shared/constants'
-export const CDN_HOST_BASE_URL = "https://example.com/";
+export const CDN_HOST_BASE_URL = "https://cdn.platform.smarter.sh/";
 ```
 
 ```html
@@ -54,7 +33,7 @@ export const CDN_HOST_BASE_URL = "https://example.com/";
 ></div>
 
 <!-- 3. add a script element pointing to the `app-loader.js` found in the build artifacts -->
-<script src="https://example.com/app-loader.js"></script>
+<script src="https://cdn.platform.smarter.sh/ui-chat/app-loader.js"></script>
 ```
 
 ```console
