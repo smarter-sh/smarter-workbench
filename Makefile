@@ -146,7 +146,7 @@ aws-bust-cache:
     # ------------------------
     # remove the cache-control header created above with a "no-cache" header so that browsers never cache these files
     # ------------------------
-	@echo 'Creating cache invalidations for service-worker.js, index.html, and manifest.json files...'
+	@echo 'Creating cache invalidations for index.html, and manifest.json files...'
 	$(AWS_CLI) s3 cp $(S3_TARGET)/index.html $(S3_TARGET)/index.html --metadata-directive REPLACE --cache-control max-age=0,no-cache,no-store,must-revalidate --content-type text/html --acl public-read
 	$(AWS_CLI) s3 cp $(S3_TARGET)/manifest.json $(S3_TARGET)/manifest.json --metadata-directive REPLACE --cache-control max-age=0,no-cache,no-store,must-revalidate --content-type text/json --acl public-read
 

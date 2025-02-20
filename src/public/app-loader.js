@@ -23,7 +23,7 @@ const DEBUG_MODE = true;
 
 // creates a new URL object from the current script's src attribute.
 // example: https://cdn.platform.smarter.sh/ui-chat/index.html
-export function deriveCdnUrl(filename) {
+function deriveCdnUrl(filename) {
   const loaderUrl = document.currentScript.src;
   const url = new URL(loaderUrl);
   if (!url) {
@@ -44,7 +44,7 @@ function addSmarterChatClass(element) {
 }
 
 // inject the react app into the DOM
-async function injectReactApp(url) {
+async function injectReactApp() {
   const url = deriveCdnUrl((filename = "index.html"));
 
   try {

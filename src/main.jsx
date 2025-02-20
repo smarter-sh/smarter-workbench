@@ -1,10 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import SmarterChat from "./components/SmarterChat/SmarterChat";
+import { SmarterChat } from "@smarter.sh/ui-chat";
 import { CHATBOT_API_URL, REACT_ROOT_ELEMENT_ID } from "./shared/constants";
 import "./styles.css";
-
-import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 
 const apiKey = null;
 
@@ -40,6 +38,3 @@ if (rootElement) {
     "Root element not found. Begin your trouble shooting journey here: https://github.com/smarter-sh/smarter-chat/blob/main/src/main.jsx",
   );
 }
-
-// Register the service worker
-//serviceWorkerRegistration.register();
