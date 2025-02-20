@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { SmarterChat } from "@smarter.sh/ui-chat";
 import { CHATBOT_API_URL, REACT_ROOT_ELEMENT_ID } from "./shared/constants";
 import "./styles.css";
+import "@smarter.sh/ui-chat/dist/ui-chat.css";
 
 const apiKey = null;
 

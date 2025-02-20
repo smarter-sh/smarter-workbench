@@ -18,18 +18,14 @@ export default defineConfig(({ mode }) => {
           main: resolve(__dirname, "src/index.html"),
           helloWorld: resolve(__dirname, "src/hello-world.html"),
         },
-        external: [
-          "workbox-core",
-          "workbox-expiration",
-          "workbox-precaching",
-          "workbox-cacheable-response",
-          "workbox-strategies",
-          "workbox-routing",
-        ],
+        external: [],
       },
     },
     root: "src",
     publicDir: resolve(__dirname, "src/public"),
+    optimizeDeps: {
+      include: ["@smarter.sh/ui-chat", "@chatscope/chat-ui-kit-react"],
+    },
   };
 
   if (mode === "dev") {
