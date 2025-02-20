@@ -21,18 +21,6 @@ const DEBUG_MODE = true;
 
  * --------------------------------------------------------------------------- */
 
-// creates a new URL object from the current script's src attribute.
-// example: https://cdn.platform.smarter.sh/ui-chat/index.html
-function deriveCdnUrl(filename) {
-  const loaderUrl = document.currentScript.src;
-  const url = new URL(loaderUrl);
-  if (!url) {
-    throw new Error("Could not derive the Smarter Chat app url from the current script's src attribute:", loaderUrl);
-  }
-  url.pathname = url.pathname.replace(/\/[^\/]*$/, "/" + filename);
-  return url.toString();
-}
-
 // adds the class 'smarter-chat' to the element.
 function addSmarterChatClass(element) {
   if (element && element.classList) {
@@ -44,9 +32,9 @@ function addSmarterChatClass(element) {
 }
 
 // inject the react app into the DOM
-async function injectReactApp() {
-  const url = deriveCdnUrl((filename = "index.html"));
-
+async function injectReactApp(url) {
+  console.log("injectReactApp function called");
+  console.log("url:", url);
   try {
     const response = await fetch(url);
     if (!response.ok) {
@@ -65,9 +53,7 @@ async function injectReactApp() {
 
     if (DEBUG_MODE === true) {
       console.log("received 200 response from the server:", url);
-      console.log("html text:", text);
-      console.log("html doc:", doc);
-      console.log("DOM elements:", elements);
+      console.log("index.html", doc);
     }
 
     elements.forEach((element) => {
@@ -117,6 +103,10 @@ https://github.com/smarter-sh/smarter-chat",
     );
   }
 }
-document.addEventListener("DOMContentLoaded", function () {
-  injectReactApp();
-});
+(function () {
+  console.log("https://cdn.platform.smarter.sh/ui-chat/app-loader.js loaded");
+  document.addEventListener("DOMContentLoaded", function () {
+    console.log("DOMContentLoaded event fired");
+    injectReactApp("https://cdn.platform.smarter.sh/ui-chat/index.html");
+  });
+})();
