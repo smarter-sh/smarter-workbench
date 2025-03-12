@@ -1,10 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { SmarterChat } from "@smarter.sh/ui-chat";
+import { SmarterChat, version as uiChatVersion } from "@smarter.sh/ui-chat";
 import { CHATBOT_API_URL, REACT_ROOT_ELEMENT_ID } from "./shared/constants";
+import { version as workbenchVersion } from "./version";
 import "./styles.css";
 import "@smarter.sh/ui-chat/dist/ui-chat.css";
 
+console.log(`@smarter.sh/ui-chat v${uiChatVersion}`);
+console.log(`@smarter.sh/workbench v${workbenchVersion}`);
 const apiKey = null;
 
 const DEFAULT_COOKIE_EXPIRATION = 1000 * 60 * 60 * 24 * 1; // 1 day

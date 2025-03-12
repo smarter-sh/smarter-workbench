@@ -7,9 +7,11 @@ const DEBUG_MODE = true;
   - https://cdn.platform.smarter.sh/ui-chat/index.html
 
   This script is responsible for injecting the Smarter Chat app into the DOM
-  of the host website. The chat app is served from AWS Cloudfront.
-  Fetches /ui-chat/index.html (the react build artifact), parses the html text,
-  and injects the css and js link elements into the head/body of the host website.
+  of the host website. The chat app is served from AWS Cloudfront.  It does
+  the following:
+  - Fetches /ui-chat/index.html (the react build artifact)
+  - parses the html text
+  - injects the css and js link elements into the head/body of the host website.
 
   Also adds the class 'smarter-chat' to the injected elements, solely for
   tracking what this script has injected into the DOM.

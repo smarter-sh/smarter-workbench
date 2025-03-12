@@ -121,6 +121,7 @@ run:
 build:
 	@echo 'Building the React app...'
 	rm -rf build
+	npm install
 	npm run build
 
 aws-verify-bucket:
