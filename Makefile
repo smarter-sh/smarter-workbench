@@ -16,14 +16,17 @@ ifeq ($(BRANCH_NAME),main)
 else ifeq ($(BRANCH_NAME),alpha)
     ENVIRONMENT := alpha
     BUCKET := alpha.platform.smarter.sh
+    DISTRIBUTION_ID := E3JWACRWT53O2W
     URL := https://cdn.alpha.platform.smarter.sh/$(TARGET_FOLDER)/
 else ifeq ($(BRANCH_NAME),beta)
     ENVIRONMENT := beta
     BUCKET := beta.platform.smarter.sh
+    DISTRIBUTION_ID := E35HUO4KP86MSQ
     URL := https://cdn.beta.platform.smarter.sh/$(TARGET_FOLDER)/
 else
     ENVIRONMENT := $(BRANCH_NAME)
     BUCKET := no-bucket
+    DISTRIBUTION_ID := NO_DISTRIBUTION_ID
     URL := ''
 endif
 S3_TARGET := s3://$(BUCKET)/$(TARGET_FOLDER)
