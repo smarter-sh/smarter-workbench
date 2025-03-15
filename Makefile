@@ -113,7 +113,6 @@ init:
 	make npm-check
 	make clean
 	npm install
-	cd npm install && npm init @eslint/config
 
 run:
 	npm run dev
