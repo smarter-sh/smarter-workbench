@@ -45,7 +45,7 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@smarter.sh/ui-chat": "0.2.2"
+    "@smarter.sh/ui-chat": "0.2.3"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.3",
