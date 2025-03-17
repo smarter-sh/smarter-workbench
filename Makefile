@@ -1,7 +1,6 @@
 # ---------------------------------------------------------
 # Makefile for the React.js app
 # ---------------------------------------------------------
-@echo 'AWS_PROFILE=$(AWS_PROFILE)'
 
 # Set environment variables based on the git branch name
 # aws resources were created by Terraform in the smarter-infrastructure repository
@@ -29,6 +28,7 @@ else
     DISTRIBUTION_ID := NO_DISTRIBUTION_ID
     URL := ''
 endif
+
 S3_TARGET := s3://$(BUCKET)/$(TARGET_FOLDER)
 
 # Detect the operating system and set the shell accordingly
@@ -55,6 +55,7 @@ else
 endif
 
 .PHONY: help clean npm-check analyze pre-commit lint update python-check python-init init run build release aws-verify-bucket aws-sync-s3 aws-bust-cache
+
 all: help
 
 # ---------------------------------------------------------
@@ -124,7 +125,7 @@ build:
 	@echo 'Building the React app...'
 	rm -rf build
 	npm install
-	npm run build
+	export VITE_ENVIRONMENT=$(ENVIRONMENT) && npm run build
 
 aws-verify-bucket:
     # ------------------------
@@ -181,7 +182,7 @@ help:
 	@echo '===================================================================='
 	@echo 'smarter-chat customizable react.js app for the Smarter Platform'
 	@echo 'AWS_PROFILE=$(AWS_PROFILE)'
-	@echo 'environment: $(ENVIRONMENT)'
+	@echo 'ENVIRONMENT: $(ENVIRONMENT)'
 	@echo 'aws s3 build target: $(S3_TARGET)'
 	@echo 'aws cloudfront distribution-id: $(DISTRIBUTION_ID)'
 	@echo 'url: $(URL)'

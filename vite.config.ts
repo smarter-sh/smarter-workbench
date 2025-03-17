@@ -1,14 +1,47 @@
-import { defineConfig } from "vite";
+import { defineConfig, loadEnv } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import { resolve } from "path";
 import { comlink } from "vite-plugin-comlink";
+import { ROOT_DOMAIN } from "./src/shared/constants";
 
-import { CDN_HOST_BASE_URL } from "./src/shared/constants";
+const env = loadEnv("production", process.cwd(), "");
+console.log('constants.js - import.meta:', env);
+
+let subdomain = 'alpha.';
+
+let git_branch = env.VITE_ENVIRONMENT || 'alpha';
+
+switch (git_branch) {
+  case 'alpha':
+    subdomain = 'alpha.';
+    break;
+  case 'beta':
+    subdomain = 'beta.';
+    break;
+  case 'main':
+    subdomain = '';
+    break;
+  default:
+    console.log('constants.js: unrecognized git branch. Using alpha as default', git_branch);
+    subdomain = 'alpha.';
+}
+// see smarter_settings.environment_cdn_url
+// https://github.com/smarter-sh/smarter/blob/beta/smarter/smarter/common/conf.py#L523
+export const CDN_HOST_BASE_URL = "https://cdn." + subdomain + "platform." + ROOT_DOMAIN + "/ui-chat/";
+
+
+console.log('smarter-workbench app-loader subdomain:', subdomain);
+console.log('smarter-workbench app-loader CDN_HOST_BASE_URL:', CDN_HOST_BASE_URL);
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
+  const env = loadEnv(mode, process.cwd());
+
   const commonConfig = {
     plugins: [react(), comlink()],
+    define: {
+      VITE_ENVIRONMENT: JSON.stringify(env.VITE_ENVIRONMENT),
+    },
     build: {
       sourcemap: true,
       outDir: "../build",
@@ -25,7 +58,7 @@ export default defineConfig(({ mode }) => {
     publicDir: resolve(__dirname, "src/public"),
     optimizeDeps: {
       include: ["@smarter.sh/ui-chat", "@chatscope/chat-ui-kit-react"],
-    },
+    }
   };
 
   if (mode === "dev") {

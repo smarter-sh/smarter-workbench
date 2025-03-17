@@ -116,7 +116,7 @@ https://github.com/smarter-sh/smarter-chat",
 
   function onDOMContentLoaded() {
     console.log("DOMContentLoaded event fired");
-    // https://cdn.platform.smarter.sh/ui-chat/index.html
+    // https://cdn.alpha.platform.smarter.sh/ui-chat/index.html
     const loaderUrl = protocol + "//" + "cdn." + domain + "/ui-chat/index.html";
     injectReactApp(loaderUrl);
   }
