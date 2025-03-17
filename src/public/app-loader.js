@@ -105,10 +105,26 @@ https://github.com/smarter-sh/smarter-chat",
     );
   }
 }
+
 (function () {
-  console.log("https://cdn.platform.smarter.sh/ui-chat/app-loader.js loaded");
-  document.addEventListener("DOMContentLoaded", function () {
+  const url = new URL(window.location.href);
+  const protocol = url.protocol;
+  const domain = url.hostname;
+  console.log("Smarter Chat app Loader initializing");
+  console.log(`Protocol: ${protocol}, Domain: ${domain}`);
+  console.log(url.href, "loaded");
+
+  function onDOMContentLoaded() {
     console.log("DOMContentLoaded event fired");
-    injectReactApp("https://cdn.platform.smarter.sh/ui-chat/index.html");
-  });
+    // https://cdn.platform.smarter.sh/ui-chat/index.html
+    const loaderUrl = protocol + "//" + "cdn." + domain + "/ui-chat/index.html";
+    injectReactApp(loaderUrl);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", onDOMContentLoaded);
+  } else {
+    console.log("Document already loaded, executing injectReactApp immediately");
+    onDOMContentLoaded();
+  }
 })();
