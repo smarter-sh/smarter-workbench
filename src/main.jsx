@@ -21,8 +21,9 @@ if (rootElement) {
   const toggleMetadata = rootElement.getAttribute("smarter-toggle-metadata") === "true";
   const csrfCookieName = rootElement.getAttribute("smarter-csrf-cookie-name") || "csrftoken";
   const sessionCookieName = rootElement.getAttribute("smarter-session-cookie-name") || "session_key";
-  const authSessionCookieName = rootElement.getAttribute("django-session-cookie-name") || "sessionid";
   const cookieDomain = rootElement.getAttribute("smarter-cookie-domain") || "platform.smarter.sh";
+  const authSessionCookieName = rootElement.getAttribute("django-session-cookie-name") || "sessionid";
+  const csrftoken = rootElement.getAttribute("django-csrftoken");
   const debugCookieName = "debug";
 
   root.render(
@@ -32,6 +33,7 @@ if (rootElement) {
         apiKey={apiKey}
         toggleMetadata={toggleMetadata}
         csrfCookieName={csrfCookieName}
+        csrftoken={csrftoken}
         debugCookieName={debugCookieName}
         debugCookieExpiration={debugCookieExpiration}
         sessionCookieName={sessionCookieName}
