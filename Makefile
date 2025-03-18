@@ -10,7 +10,7 @@ TARGET_FOLDER := ui-chat
 ifeq ($(BRANCH_NAME),main)
     ENVIRONMENT := prod
     BUCKET := platform.smarter.sh
-    DISTRIBUTION_ID := E1AQ8TNR0TZNRT
+    DISTRIBUTION_ID := E3RBVI08PL6I04
     URL := https://cdn.platform.smarter.sh/$(TARGET_FOLDER)/
 else ifeq ($(BRANCH_NAME),alpha)
     ENVIRONMENT := alpha

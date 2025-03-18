@@ -11,10 +11,7 @@ console.log(`@smarter.sh/workbench v${workbenchVersion}`);
 const apiKey = null;
 
 const DEFAULT_COOKIE_EXPIRATION = 1000 * 60 * 60 * 24 * 1; // 1 day
-const csrfCookieName = "csrftoken";
-const debugCookieName = "debug";
 const debugCookieExpiration = DEFAULT_COOKIE_EXPIRATION;
-const sessionCookieName = "session_key";
 const sessionCookieExpiration = DEFAULT_COOKIE_EXPIRATION;
 
 const rootElement = document.getElementById(REACT_ROOT_ELEMENT_ID);
@@ -22,6 +19,11 @@ if (rootElement) {
   const root = ReactDOM.createRoot(rootElement);
   const apiUrl = rootElement.getAttribute("smarter-chatbot-api-url");
   const toggleMetadata = rootElement.getAttribute("smarter-toggle-metadata") === "true";
+  const csrfCookieName = rootElement.getAttribute("smarter-csrf-cookie-name") || "csrftoken";
+  const sessionCookieName = rootElement.getAttribute("smarter-session-cookie-name") || "session_key";
+  const authSessionCookieName = rootElement.getAttribute("django-session-cookie-name") || "sessionid";
+  const cookieDomain = rootElement.getAttribute("smarter-cookie-domain") || "platform.smarter.sh";
+  const debugCookieName = "debug";
 
   root.render(
     <React.StrictMode>
@@ -34,6 +36,8 @@ if (rootElement) {
         debugCookieExpiration={debugCookieExpiration}
         sessionCookieName={sessionCookieName}
         sessionCookieExpiration={sessionCookieExpiration}
+        authSessionCookieName={authSessionCookieName}
+        cookieDomain={cookieDomain}
       />
     </React.StrictMode>,
   );
