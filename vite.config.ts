@@ -8,20 +8,20 @@ const env = loadEnv("production", process.cwd(), "");
 
 let subdomain = "alpha.";
 
-let git_branch = env.VITE_ENVIRONMENT || "alpha";
+let environment = env.VITE_ENVIRONMENT || "alpha";
 
-switch (git_branch) {
+switch (environment) {
   case "alpha":
     subdomain = "alpha.";
     break;
   case "beta":
     subdomain = "beta.";
     break;
-  case "main":
+  case "prod":
     subdomain = "";
     break;
   default:
-    console.log("constants.js: unrecognized git branch. Using alpha as default", git_branch);
+    console.log("constants.js: unrecognized git branch. Using alpha as default", environment);
     subdomain = "alpha.";
 }
 // see smarter_settings.environment_cdn_url
