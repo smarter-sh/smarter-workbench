@@ -116,16 +116,16 @@ https://github.com/smarter-sh/smarter-chat",
     switch (hostname) {
       case "localhost":
         protocol = "https:";
-        return "platform.smarter.sh";
+        return "alpha.platform.smarter.sh";
       case "localhost:8000":
         protocol = "https:";
-        return "platform.smarter.sh";
+        return "alpha.platform.smarter.sh";
       case "127.1.1":
         protocol = "https:";
-        return "platform.smarter.sh";
+        return "alpha.platform.smarter.sh";
       case "127.1.1:8000":
         protocol = "https:";
-        return "platform.smarter.sh";
+        return "alpha.platform.smarter.sh";
       default:
         return hostname;
     }
