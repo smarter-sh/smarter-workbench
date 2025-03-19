@@ -110,17 +110,21 @@ https://github.com/smarter-sh/smarter-chat",
 
 (function () {
   const url = new URL(window.location.href);
-  const protocol = url.protocol;
+  let protocol = url.protocol;
   const hostname = url.hostname;
   const domain = (() => {
     switch (hostname) {
       case "localhost":
+        protocol = "https:";
         return "platform.smarter.sh";
       case "localhost:8000":
+        protocol = "https:";
         return "platform.smarter.sh";
       case "127.1.1":
+        protocol = "https:";
         return "platform.smarter.sh";
       case "127.1.1:8000":
+        protocol = "https:";
         return "platform.smarter.sh";
       default:
         return hostname;
