@@ -21,7 +21,7 @@ switch (git_branch) {
     subdomain = "";
     break;
   default:
-    console.log("constants.js: unrecognized git branch. Using alpha as default", git_branch);
+    console.warn("constants.js: unrecognized git branch. Using alpha as default", git_branch);
     subdomain = "alpha.";
 }
 // see smarter_settings.environment_cdn_url
