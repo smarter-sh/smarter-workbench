@@ -120,10 +120,10 @@ https://github.com/smarter-sh/smarter-chat",
       case "localhost:8000":
         protocol = "https:";
         return "alpha.platform.smarter.sh";
-      case "127.1.1":
+      case "127.0.0.1":
         protocol = "https:";
         return "alpha.platform.smarter.sh";
-      case "127.1.1:8000":
+      case "127.0.0.1:8000":
         protocol = "https:";
         return "alpha.platform.smarter.sh";
       default:
