@@ -1,4 +1,4 @@
-const DEBUG_MODE = true;
+const DEBUG_MODE = false;
 /* ----------------------------------------------------------------------------
   SmarterChat app Loader.
 
@@ -35,8 +35,10 @@ function addSmarterChatClass(element) {
 
 // inject the react app into the DOM
 async function injectReactApp(url) {
-  console.log("injectReactApp function called");
-  console.log("url:", url);
+  if (DEBUG_MODE === true) {
+    console.log("injectReactApp function called");
+    console.log("url:", url);
+  }
   try {
     const response = await fetch(url);
     if (!response.ok) {
@@ -109,13 +111,32 @@ https://github.com/smarter-sh/smarter-chat",
 (function () {
   const url = new URL(window.location.href);
   const protocol = url.protocol;
-  const domain = url.hostname;
-  console.log("Smarter Chat app Loader initializing");
-  console.log(`Protocol: ${protocol}, Domain: ${domain}`);
-  console.log(url.href, "loaded");
+  const hostname = url.hostname;
+  const domain = (() => {
+    switch (hostname) {
+      case "localhost":
+        return "platform.smarter.sh";
+      case "localhost:8000":
+        return "platform.smarter.sh";
+      case "127.1.1":
+        return "platform.smarter.sh";
+      case "127.1.1:8000":
+        return "platform.smarter.sh";
+      default:
+        return hostname;
+    }
+  })();
+
+  if (DEBUG_MODE === true) {
+    console.log("Smarter Chat app Loader initializing");
+    console.log(`Protocol: ${protocol}, Domain: ${domain}`);
+    console.log(url.href, "loaded");
+  }
 
   function onDOMContentLoaded() {
-    console.log("DOMContentLoaded event fired");
+    if (DEBUG_MODE === true) {
+      console.log("DOMContentLoaded event fired");
+    }
     // https://cdn.alpha.platform.smarter.sh/ui-chat/index.html
     const loaderUrl = protocol + "//" + "cdn." + domain + "/ui-chat/index.html";
     injectReactApp(loaderUrl);
@@ -124,7 +145,9 @@ https://github.com/smarter-sh/smarter-chat",
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", onDOMContentLoaded);
   } else {
-    console.log("Document already loaded, executing injectReactApp immediately");
+    if (DEBUG_MODE === true) {
+      console.log("Document already loaded, executing injectReactApp immediately");
+    }
     onDOMContentLoaded();
   }
 })();
