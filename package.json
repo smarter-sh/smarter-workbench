@@ -47,7 +47,7 @@
   },
   "dependencies": {
     "@smarter.sh/ui-chat": "0.2.10",
-    "dotenv": "^16.4.7"
+    "dotenv": "^17.0.0"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.3",
