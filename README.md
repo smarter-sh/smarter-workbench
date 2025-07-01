@@ -11,7 +11,7 @@ existing web pages; in this case, a Django project. See [Smarter Technical Overv
 
 ![Basic Usage](./doc/img/readme-usage4.png)
 
-## Usage: integrate to an existing Django web application
+## Usage: integrate to an existing web page
 
 Pass an authenticated chatbot api url that works with any chatbot associated with your Smarter account, regardless of whether it has been deployed.
 
