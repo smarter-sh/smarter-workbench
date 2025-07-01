@@ -85,7 +85,7 @@ See: [sample config](./data/sample-config.json)
 
 #### Api
 
-A REST Api for sending and receiving chat prompt requests. The url comes from the config dict (above): data.chatbot.url_chatbot.
+A REST Api for sending and receiving vendor agnostic LLM text completion 'prompt' requests. The request body, generated entirely by the [@smarter.sh/ui-chat](https://www.npmjs.com/package/@smarter.sh/ui-chat) ReactJS npm component, is a superset of the [OpenAI Api](https://platform.openai.com/docs/overview) prompt specification. The url comes from the config dict (above): data.chatbot.url_chatbot.
 example: `http://api.smarter.sh/v1/chatbots/smarter/example/`
 
 example http request:
