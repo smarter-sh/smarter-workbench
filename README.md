@@ -28,7 +28,7 @@ export const CDN_HOST_BASE_URL = "https://cdn.platform.smarter.sh/";
 <!-- 2. add a react 'root' element to your DOM that react can locate and initialize itself.  -->
 <div
   id="root"
-  smarter-chatbot-api-url="https://platform.smarter.sh/chatbots/smarter/"
+  smarter-chatbot-api-url="https://my-ai-agent.1234-5678-9012.platform.smarter.sh/"
   smarter-toggle-metadata="false"
 ></div>
 
@@ -61,20 +61,20 @@ This app interacts with two endpoints from the [smarter.sh/v1](https://platform.
 - GET `/config/`: retrieves a json dict, structured in 4 major sections, with all information required by the react app.
 - POST `/chat/`: send a text completion prompt to the Smarter Api.
 
-Smarter chatbot urls use either of these two naming conventions:
+Smarter chatbot urls use either of these three naming conventions:
 
-- public: `https://<name>.<account_number>.example.com/`
-- authenticated: `https://platform.smarter.sh/chatbots/<name>/`. This react component looks for and adds the Smarter platform sessionid cookie value to request headers, if it exists.
+- public: `https://<str:name>.<str:account_number>.example.com/`
+- authenticated: `https://platform.smarter.sh/chatbots/<str:name>/`. This react component looks for and adds the Smarter platform sessionid cookie value to request headers, if it exists.
+- authenticated api: `https://platform.smarter.sh/api/v1/chatbots/<int:chatbot_id>/`
 
-Public api url example for a deployed chatbot:
+Public api url examples for a deployed chatbot:
 
-- `https://my-chatbot.3141-5926-5359.api.smarter.sh/config/`
-- `https://my-chatbot.3141-5926-5359.api.smarter.sh/chat/`
+- `https://my-chatbot.3141-5926-5359.api.smarter.sh/`
 
 Authenticated api url example for any chatbot in your Smarter account:
 
-- `https://platform.smarter.sh/chatbots/my-chatbot/config/`
-- `https://platform.smarter.sh/chatbots/my-chatbot/chat/`
+- `https://platform.smarter.sh/chatbots/my-chatbot/`
+- `https://platform.smarter.sh/api/v1/chatbots/5/`
 
 #### Config
 
