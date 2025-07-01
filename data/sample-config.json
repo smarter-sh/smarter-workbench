@@ -1,0 +1,169 @@
+{
+  "data": {
+    "session_key": "3824493b3cf6030c164b7b623597d09a276d8270bfad35725b061a8fdec3baed",
+    "sandbox_mode": true,
+    "debug_mode": false,
+    "chatbot": {
+      "id": 1,
+      "url_chatbot": "https://alpha.platform.smarter.sh/api/v1/chatbots/1/chat/",
+      "account": {
+        "accountNumber": "3141-5926-5359"
+      },
+      "default_system_role": "The current date/time is Tuesday, 2025-07-01T14:25:49+0000\nYou are a helpful chatbot. When given the opportunity to utilize function calling, you should always do so. This will allow you to provide the best possible responses to the user. If you are unable to provide a response, you should prompt the user for more information. If you are still unable to provide a response, you should inform the user that you are unable to help them at this time.",
+      "created_at": "2024-11-20T22:11:34.114980Z",
+      "updated_at": "2025-03-18T03:26:52.238543Z",
+      "name": "example",
+      "description": "An example chatbot with tool calling and Smarter Plugins.",
+      "version": "0.1.0",
+      "deployed": true,
+      "provider": "openai",
+      "default_model": "gpt-4-turbo",
+      "default_temperature": 0.5,
+      "default_max_tokens": 256,
+      "app_name": "Smarter Demo",
+      "app_assistant": "Kent",
+      "app_welcome_message": "Welcome to the Smarter demo!",
+      "app_example_prompts": [
+        "What is the weather in San Francisco?",
+        "What is an Everlasting Gobstopper?",
+        "example function calling configuration"
+      ],
+      "app_placeholder": "Ask me anything...",
+      "app_info_url": "https://smarter.sh",
+      "app_background_image_url": null,
+      "app_logo_url": "/static/querium/querium-logo-white-transparent.png",
+      "app_file_attachment": false,
+      "dns_verification_status": "Verified",
+      "tls_certificate_issuance_status": "Requested",
+      "subdomain": null,
+      "custom_domain": null
+    },
+    "history": {
+      "chat": {
+        "id": 12,
+        "created_at": "2025-07-01T14:25:49.830098Z",
+        "updated_at": "2025-07-01T14:25:49.830129Z",
+        "session_key": "3824493b3cf6030c164b7b623597d09a276d8270bfad35725b061a8fdec3baed",
+        "ip_address": "192.168.6.103",
+        "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+        "url": "http://alpha.platform.smarter.sh/workbench/example/config/",
+        "account": 1,
+        "chatbot": 1
+      },
+      "chat_history": [],
+      "chat_tool_call_history": [],
+      "chat_plugin_usage_history": [],
+      "chatbot_request_history": [],
+      "plugin_selector_history": []
+    },
+    "meta_data": {
+      "ready": true,
+      "name": "example",
+      "api_host": "alpha.api.smarter.sh",
+      "chatbot_id": null,
+      "chatbot_name": "example",
+      "chatbot_custom_domain": null,
+      "environment_api_domain": "alpha.api.smarter.sh",
+      "err": "\u001b[1;31mChatBotHelper\u001b[0m AccountMixin().SmarterRequestMixin().ChatBotHelper().is_chatbothelper_ready() 140031388726352 returning false because ChatBot is not initialized. url=http://alpha.platform.smarter.sh/workbench/example/config/",
+      "is_custom_domain": false,
+      "is_deployed": true,
+      "is_valid": true,
+      "is_authentication_required": true,
+      "chatbot": {
+        "id": 1,
+        "created_at": "2024-11-20T22:11:34.114980Z",
+        "updated_at": "2025-03-18T03:26:52.238543Z",
+        "account": {
+          "accountNumber": "3141-5926-5359"
+        },
+        "name": "example",
+        "description": "An example chatbot with tool calling and Smarter Plugins.",
+        "version": "0.1.0",
+        "subdomain": null,
+        "custom_domain": null,
+        "deployed": true,
+        "provider": "openai",
+        "default_model": "gpt-4-turbo",
+        "default_system_role": "You are a helpful chatbot. When given the opportunity to utilize function calling, you should always do so. This will allow you to provide the best possible responses to the user. If you are unable to provide a response, you should prompt the user for more information. If you are still unable to provide a response, you should inform the user that you are unable to help them at this time.",
+        "default_temperature": 0.5,
+        "default_max_tokens": 256,
+        "app_name": "Smarter Demo",
+        "app_assistant": "Kent",
+        "app_welcome_message": "Welcome to the Smarter demo!",
+        "app_example_prompts": [
+          "What is the weather in San Francisco?",
+          "What is an Everlasting Gobstopper?",
+          "example function calling configuration"
+        ],
+        "app_placeholder": "Ask me anything...",
+        "app_info_url": "https://smarter.sh",
+        "app_background_image_url": null,
+        "app_logo_url": "/static/querium/querium-logo-white-transparent.png",
+        "app_file_attachment": false,
+        "dns_verification_status": "Verified",
+        "tls_certificate_issuance_status": "Requested",
+        "url_chatbot": "https://alpha.platform.smarter.sh/api/v1/chatbots/1/chat/"
+      },
+      "url": "http://alpha.platform.smarter.sh/workbench/example/config/",
+      "session_key": "3824493b3cf6030c164b7b623597d09a276d8270bfad35725b061a8fdec3baed",
+      "data": {},
+      "is_smarter_api": false,
+      "is_chatbot": true,
+      "is_chatbot_smarter_api_url": false,
+      "is_chatbot_named_url": false,
+      "is_chatbot_sandbox_url": true,
+      "is_chatbot_cli_api_url": false,
+      "is_default_domain": false,
+      "path": "/workbench/example/config/",
+      "root_domain": "smarter.sh",
+      "subdomain": "alpha.platform",
+      "api_subdomain": "alpha",
+      "domain": "alpha.platform.smarter.sh",
+      "timestamp": "2025-07-01T14:25:49.854934",
+      "unique_client_string": "3141-5926-5359.http://alpha.platform.smarter.sh/workbench/example/config/.Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36.192.168.6.103.2025-07-01T14:25:49.854934",
+      "client_key": "3824493b3cf6030c164b7b623597d09a276d8270bfad35725b061a8fdec3baed",
+      "ip_address": "192.168.6.103",
+      "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+      "parsed_url": "ParseResult(scheme='http', netloc='alpha.platform.smarter.sh', path='/workbench/example/config/', params='', query='', fragment='')",
+      "request": true,
+      "qualified_request": true,
+      "url_path_parts": ["workbench", "example", "config"],
+      "params": {},
+      "uid": null,
+      "cache_key": "024304946256a341bf7796262884d72a51478dceb0e8fcdf907e37886e52ab90",
+      "is_config": true,
+      "is_dashboard": false,
+      "is_workbench": false,
+      "is_environment_root_domain": false,
+      "account": {
+        "accountNumber": "3141-5926-5359"
+      },
+      "user": {
+        "username": "admin",
+        "email": "admin@smarter.sh"
+      },
+      "user_profile": {
+        "user": {
+          "username": "admin",
+          "email": "admin@smarter.sh"
+        },
+        "account": {
+          "accountNumber": "3141-5926-5359"
+        }
+      },
+      "class_name": "ChatBotHelper"
+    },
+    "plugins": {
+      "meta_data": {
+        "total_plugins": 0,
+        "plugins_returned": 0
+      },
+      "plugins": []
+    }
+  },
+  "api": "smarter.sh/v1",
+  "thing": "ChatConfig",
+  "metadata": {
+    "command": "chat_config"
+  }
+}
